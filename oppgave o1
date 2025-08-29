@@ -69,7 +69,7 @@ public class App {
                 + String.format("%.2f",(inn-innt))
                 +",-");
 
-            }else if(inn < inntkr1){
+            }else if(inn < inntkr1 && inn > 0){
                 double innt = inn*trinn0;
                 System.out.println("Din trinnskatt er 0%\nInntekt etter skatt er " 
                 + String.format("%.2f",innt) + "\nDu skatter: " 
