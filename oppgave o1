@@ -1,0 +1,84 @@
+import java.util.Scanner;
+
+public class App {
+    public static void main(String[] args) throws Exception {
+        
+        Scanner scanner = new Scanner(System.in);
+
+            
+        System.out.println("Skriv inn inntekt: ");
+
+        //skattefot omgjort til prosent
+
+        double trinn1 = 0.983;
+        double trinn2 = 0.96;
+        double trinn3 = 0.863;
+        double trinn4 = 0.833;
+        double trinn5 = 0.829;
+        double trinn0 = 1;
+
+        //inntekts verdier
+
+        double inntkr1 = 217400;
+        double inntkr2 = 306050;
+        double inntkr3 = 697150;
+        double inntkr4 = 942400;
+        double inntkr5 = 1410750;
+
+
+
+        double inn = scanner.nextDouble();
+
+            if (inn < inntkr2 && inn>= inntkr1){
+                double innt = inn*trinn1;
+                System.out.println("Din trinnskatt er " 
+                + String.format("%.2f",(1-trinn1)*(100)) + "%\nInntekt etter skatt er " 
+                + String.format("%.2f",innt) + ",-\nDu skatter: " 
+                + String.format("%.2f",(inn-innt))
+                +",-");
+        
+            }else if (inn < inntkr3 && inn >= inntkr2){
+                double innt = inn*trinn2;
+                System.out.println("Din trinnskatt er " 
+                + String.format("%.2f",(1-trinn2)*(100)) + "%\nInntekt etter skatt er " 
+                + String.format("%.2f",innt) + ",-\nDu skatter: " 
+                + String.format("%.2f",(inn-innt))
+                +",-");
+        
+            }else if (inn < inntkr4 && inn >= inntkr3){
+                double innt = inn*trinn3;
+                System.out.println("Din trinnskatt er " 
+                + String.format("%.2f",(1-trinn3)*(100)) + "%\nInntekt etter skatt er " 
+                + String.format("%.2f",innt) + ",-\nDu skatter: " 
+                + String.format("%.2f",(inn-innt))
+                +",-");
+
+            }else if (inn < inntkr5 && inn >= inntkr4){
+                double innt = inn*trinn4;
+                System.out.println("Din trinnskatt er " 
+                + String.format("%.2f",(1-trinn4)*(100)) + "%\nInntekt etter skatt er " 
+                + String.format("%.2f",innt) + ",-\nDu skatter: " 
+                + String.format("%.2f",(inn-innt))
+                +",-");
+
+            }else if (inn >= inntkr5){
+                double innt = inn*trinn5;
+                System.out.println("Din trinnskatt er " 
+                + String.format("%.2f",(1-trinn5)*(100)) + "%\nInntekt etter skatt er " 
+                + String.format("%.2f",innt) + ",-\nDu skatter: " 
+                + String.format("%.2f",(inn-innt))
+                +",-");
+
+            }else if(inn < inntkr1){
+                double innt = inn*trinn0;
+                System.out.println("Din trinnskatt er 0%\nInntekt etter skatt er " 
+                + String.format("%.2f",innt) + "\nDu skatter: " 
+                + String.format("%.2f",(inn-innt))
+                +",-");
+
+            }else{
+                System.out.println("Ugyldig verdi");
+            }
+     scanner.close();
+    }
+}
